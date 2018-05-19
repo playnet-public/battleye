@@ -29,7 +29,7 @@ func (p *protocol) Verify(d Packet) error {
 		return err
 	}
 	_, err = p.Type(d)
-	return nil
+	return err
 }
 
 // Sequence extracts the seq number from a packet
