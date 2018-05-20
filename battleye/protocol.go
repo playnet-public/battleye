@@ -3,17 +3,39 @@ package battleye
 // Protocol offers an interface representation for BattlEye communications
 //go:generate counterfeiter -o ../mocks/protocol.go --fake-name Protocol . Protocol
 type Protocol interface {
+	//BuildPacket creates a new packet with data and type
 	BuildPacket([]byte, Type) Packet
+
+	//BuildLoginPacket creates a login packet with password
 	BuildLoginPacket(string) Packet
+
+	//BuildCmdPacket creates a packet with cmd and seq
 	BuildCmdPacket([]byte, Sequence) Packet
+
+	//BuildKeepAlivePacket creates a keepAlivePacket with seq
 	BuildKeepAlivePacket(Sequence) Packet
+
+	//BuildMsgAckPacket creates a server message packet with seq
 	BuildMsgAckPacket(Sequence) Packet
 
+	// Verify if the packet is valid
 	Verify(Packet) error
+
+	// Sequence extracts the seq number from a packet
 	Sequence(Packet) (Sequence, error)
+
+	// Type determines the kind of response from a packet
 	Type(Packet) (Type, error)
+
+	// Data returns the actual data inside the packet
 	Data(Packet) ([]byte, error)
+
+	// VerifyLogin returns nil on successful login
+	// and a respective error on failed login
 	VerifyLogin(d Packet) error
+
+	// Multi checks whether a packet is part of a multiPacketResponse
+	// Returns: packetCount, currentPacket and isSingle
 	Multi(Packet) (byte, byte, bool)
 }
 
