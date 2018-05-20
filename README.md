@@ -3,6 +3,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/513590eff4e54095a25b66bf65bd1323)](https://www.codacy.com/app/playnet/battleye?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=playnet-public/battleye&amp;utm_campaign=Badge_Grade)
 [![Build Status](https://travis-ci.org/playnet-public/battleye.svg?branch=master)](https://travis-ci.org/playnet-public/battleye)
 [![GitHub license](https://img.shields.io/badge/license-AGPL-blue.svg)](https://raw.githubusercontent.com/playnet-public/battleye/master/LICENSE)
+[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](https://godoc.org/github.com/playnet-public/battleye)
 [![Join Discord at https://discord.gg/dWZkR6R](https://img.shields.io/badge/style-join-green.svg?style=flat&label=Discord)](https://discord.gg/dWZkR6R)
 
 The BattlEye package is implementing the [BattlEye Protocol](https://www.battleye.com/downloads/BERConProtocol.txt) for use in other projects.
